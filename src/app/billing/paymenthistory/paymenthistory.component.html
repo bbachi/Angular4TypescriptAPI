@@ -1,0 +1,21 @@
+<section id="contentWrapper">
+  <div>
+    <h1 class="pageHeader">Payment History</h1>
+    <div class="infoHolder">
+          <div class="">
+            <div class="label">Property:</div>
+            <div class="data">{{propertyName$ | async}}</div>
+          </div>
+
+    </div>
+    <!-- <div id="dynamicContent" class="text-right"></div> -->
+    <payment-history-search (onApplyClick)="onApply($event)" [contractAccountList]="contractAccountList$ | async"></payment-history-search>
+    <div class="mT3P">
+        <payment-history-table (onCancelPaymentClick)="onCancelPayment($event)" (onModifyPaymentClick)="onModifyPayment($event)" [paymentHistoryList]="paymentHistory$ | async"></payment-history-table>
+    </div>
+    <div id="buttonHolder" class="text-right">
+        <gme-csv [csvList]="paymentHistory$ | async" [name]="csvName"></gme-csv>
+    </div>
+    <!-- <div id="dynamicContent" class="text-right"></div> -->
+  </div>
+</section>

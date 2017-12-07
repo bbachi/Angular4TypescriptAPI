@@ -1,0 +1,46 @@
+<section id="contentWrapper">
+	<div>
+		<h1 class="pageHeader">Verify Payment</h1>
+		<!--<div id="dynamicContent">oam_selectAccount_top.xml</div> -->
+		<div class="infoHolder mT3P">
+					<div class="split inlineBlock infoHolder">
+						<div class="label">Property:</div>
+						<div class="data">property name</div>
+					</div>
+					<div class="split inlineBlock infoHolder">
+						<div class="label">Account:</div>
+						<div class="data">#XXXXXXX-X</div>
+					</div>
+    </div>
+		<div class="infoHolder">
+			<div class="subheader mT3P">Payment Information</div>
+			<div class="greyLineSeperator">&nbsp;</div>
+			<div>
+				<div class="label">Payment Amount:</div>
+				<div class="data b">$1,000.00</div>
+			</div>
+			<div>
+				<div class="label">Payment Date:</div>
+				<div class="data">02/02/2014</div>
+			</div>
+		</div>
+		<div class="infoHolder">
+			<div class="subheader mT3P">Bank Account Information</div>
+			<div class="greyLineSeperator">&nbsp;</div>
+			<div>
+				<div class="split inlineBlock infoHolder">
+					<div class="label">Payment Method:</div>
+					<div class="data">Nickname, ********8758</div>
+				</div>
+				<div class="split inlineBlock infoHolder text-right">
+					<a href="#">Change Bank Account Information</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="buttonHolder" class="text-right">
+			<button class="black">Back</button>
+			<button (click)="onContinue()">Submit Payment</button>
+		</div>
+	</div>
+</section>

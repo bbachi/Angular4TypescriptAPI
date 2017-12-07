@@ -1,0 +1,20 @@
+<div class="mT3P">
+  <div id="searchAreaHolder">
+    <div>
+      <div class="inlineBlock mR3P">
+        <label for="searchBy" class="label">Account Number:</label>
+        <select id="accountnumber" (change)="onChangeContractAccount($event.target.value)" class="cardselectboxspace">
+          <optgroup label="Individual">
+            <option *ngFor="let ca of contractAccountList.indContractAccountList;" value="{{ca.contractAccountNumber}}:I">{{ca.address}}</option>
+          </optgroup>
+          <optgroup label="Collective">
+            <option *ngFor="let ca of contractAccountList.collContractAccountList;" value="{{ca.contractAccountNumber}}:C">{{ca.address}}</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="inlineBlock">
+        <a (click)="onApply()" class="button textBoxButton blue">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>

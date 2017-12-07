@@ -1,0 +1,83 @@
+<section id="contentWrapper">
+	<div>
+		<h1 class="pageHeader">Payment Methods</h1>
+
+		<div class="infoHolder mT3P">
+					<div>
+						<div class="label">Property:</div>
+						<div class="data">property name</div>
+					</div>
+
+		</div>
+		<!--<div id="dynamicContent">oam_selectAccount_top.xml</div> -->
+		<div class="mT3P">
+			<div class="inlineBlock">
+				<div class="b">Account</div>
+				<div>#XXXXXXX-X</div>
+			</div>
+			<div class="inlineBlock mL20">
+				<div class="b">Due Date</div>
+				<div>#XXXXXXX-X</div>
+			</div>
+			<div class="inlineBlock mL20">
+				<div class="b">Current Balance</div>
+				<div>#XXXXXXX-X</div>
+			</div>
+			<div class="inlineBlock mL20">
+				<a href="#">Invoice#12346</a>
+			</div>
+		</div>
+		<form name="storedBankFrm" id="storedBankFrm" action="somewhere.jsp">
+		<div class="infoHolder">
+			<div class="subheader mT3P">Payment Information</div>
+			<div class="greyLineSeperator">&nbsp;</div>
+			<div>
+				<div class="label">Payment Amount:</div>
+				<div class="data b">$1,000.00</div>
+			</div>
+			<div>
+					<label for="paymentDate" >Payment Date</label>
+				<div>
+					<input type="text" name="paymentDate" id="paymentDate">
+					<img src="images/calendarIcon.png" alt="show date" title="show date">
+				</div>
+			</div>
+		</div>
+		<div class="infoHolder">
+			<div class="subheader mT3P">Bank Account Information</div>
+			<div class="greyLineSeperator">&nbsp;</div>
+			<div class="b">Bank Account</div>
+			<div class="storedBankAccountHolder">
+				<div>
+					<input type="radio" id="bank11" name="selectbank" value="bank1">
+					<label class="radio-inline" for="bank11">
+					  <span class="gmeRadio"></span>
+					  Nickname 1, ********8758
+					</label>
+					<a href="#" class="mL20">Delete</a>
+				</div>
+				<div class="mT1P">
+					<input type="radio" id="bank2" name="selectbank" value="bank2">
+					<label class="radio-inline" for="bank2">
+					  <span class="gmeRadio"></span>
+					  Nickname 2, ********4001
+					</label>
+					<a href="#" class="mL20">Delete</a>
+				</div>
+				<div class="mT1P">
+					<input type="radio" id="newBank" name="selectbank" value="newBank">
+					<label class="radio-inline" for="newBank">
+					  <span class="gmeRadio"></span>
+					  New bank account
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div id="buttonHolder" class="text-right">
+			<button class="black">Back</button>
+			<button (click)="onContinue()">Continue</button>
+		</div>
+	</form>
+	</div>
+</section>

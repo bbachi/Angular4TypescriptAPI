@@ -1,0 +1,27 @@
+<section id="contentWrapper">
+		<div>
+			<h1 class="pageHeader">Previous Bills</h1>
+			<div class="infoHolder">
+						<div class="">
+							<div class="label">Property:</div>
+							<div class="data">{{propertyName$ | async}}</div>
+						</div>
+			</div>
+			<!--<div id="dynamicContent" class="text-right"></div> -->
+			<previous-bills-search (onApplyClick)="onApply($event)" [contractAccountList]="contractAccountList$ | async"></previous-bills-search>
+
+			<div class="mT3P">
+					<previous-bills-table *ngIf="(previousbills$ | async)?.length >0; else showErrResult" [previousBills]="previousbills$ | async"></previous-bills-table>
+					<ng-template #showErrResult>
+							<gme-error *ngIf="(previousbills$ | async)?.length ==0; else loading" errorMessage="No Data available for the selected report type."></gme-error>
+							<ng-template #loading>
+								<loading-indicator></loading-indicator>
+							</ng-template>
+					</ng-template>
+			</div>
+			<div id="buttonHolder" class="text-right">
+				<gme-csv [csvList]="previousbills$ | async" [name]="csvName"></gme-csv>
+			</div>
+			<!--<div id="dynamicContent" class="text-right"></div> -->
+		</div>
+</section>

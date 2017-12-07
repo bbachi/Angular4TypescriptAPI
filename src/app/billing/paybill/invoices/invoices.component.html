@@ -1,0 +1,18 @@
+<section id="contentWrapper">
+	<div>
+		<h1 class="pageHeader">View Current Bill</h1>
+		<div class="infoHolder">
+			<div>
+				<div class="b inlineBlock">Poperty:</div>
+				<div class="data">{{propertyName$ | async}}</div>
+			</div>
+		</div>
+
+		<loading-indicator *ngIf="(invoices$ | async)?.isLoading"></loading-indicator>
+		<div #showResult *ngIf="(invoices$ | async)?.isLoadingSuccess">
+				<collective-invoice-table *ngIf="(invoices$ | async)?.invoices.collectiveInvoices.length > 0" (onPayBillClick)="onPayBill($event, 'C')" [collectiveInvoices]="(invoices$ | async)?.invoices.collectiveInvoices"></collective-invoice-table>
+				<individual-invoice-table *ngIf="(invoices$ | async)?.invoices?.individualInvoices?.length > 0" (onPayBillClick)="onPayBill($event, 'I')" [individualInvoices]="(invoices$ | async)?.invoices.individualInvoices"></individual-invoice-table>
+		</div>
+		<gme-error *ngIf="(invoices$ | async)?.isLoadingSuccess == false" errorMessage="No invoices found for this property."></gme-error>
+</div>
+</section>
